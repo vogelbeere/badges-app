@@ -1,0 +1,98 @@
+﻿<div class="pane" ng-click="doHideMenuPanel()">
+    <!--suggested badges pane -->
+
+    <h2>Suggested Activities</h2>
+    <p><a href="#/allbadges"><i class="fa fa-search"></i> Search for activities</a></p>
+    <div id="loading" ng-show="loading">
+        <i class="fa fa-spinner fa-pulse fa-2x"></i>
+    </div>
+    <div class="page-wrap scroll animated slideInUp">
+        <!--  ng-controller="nextBadgesCtrl" -->
+        <span ng-repeat="nextbadge in nextbadges"></span>
+        <p ng-show="(nextbadges).length">Here are some achievements that you could work towards next. Select one to sign up for it.</p>
+        <p ng-show="(nextbadges).length">
+            <strong class="strapline muted" ng-click="confDetailToggle()" ng-class="{closed:!confDetailOpen,open:confDetailOpen}">Confidence</strong><br />
+            <span ng-show="confDetailOpen">
+                <span ng-repeat="badge in badges | filter: {badge_category:'CONF'} | filter:query as results1"></span>
+                You have {{results1.length}}  <span ng-if="results1.length !== 1">achievements</span>
+                <span ng-if="results1.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results1.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results1.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results1.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results1.length == 5"> (Gold). Well done!</span>
+            </span>
+        </p>
+        <div ng-show="confDetailOpen" class="box two-col" ng-repeat="nextbadge in nextbadges | filter: {next_badge_category:'CONF'}">
+            <a data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                <div class="inner-box">
+                    <span class="badge {{nextbadge.next_badge_category}} faded"><i class="fa fa-star-o"></i></span>
+                    <span class="badge-caption">{{nextbadge.coursename}}<br/> ({{nextbadge.next_badge_name}})</span>
+                </div>
+            </a>
+        </div>
+        <p ng-show="(nextbadges).length">
+            <strong class="strapline muted" ng-click="entcDetailToggle()" ng-class="{closed:!entcDetailOpen,open:entcDetailOpen}">Enterprising Creativity</strong><br />
+            <span ng-show="entcDetailOpen">
+                <span ng-repeat="badge in badges | filter: {badge_category:'ENTC' } | filter:query as results2"></span>
+                You have {{results2.length}}  <span ng-if="results2.length !== 1">achievements</span>
+                <span ng-if="results2.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results2.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results2.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results2.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results2.length == 5"> (Gold). Well done!</span>
+            </span>
+        </p>
+        <div ng-show="entcDetailOpen" class="box two-col" ng-repeat="nextbadge in nextbadges | filter: {next_badge_category:'ENTC'}">
+            <a data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                <div class="inner-box">
+                    <span class="badge {{nextbadge.next_badge_category}} faded"><i class="fa fa-star-o"></i></span>
+                    <span class="badge-caption">{{nextbadge.coursename}}<br /> ({{nextbadge.next_badge_name}})</span>
+                </div>
+            </a>
+        </div>
+        <p ng-show="(nextbadges).length">
+            <strong class="strapline muted" ng-click="connDetailToggle()" ng-class="{closed:!connDetailOpen,open:connDetailOpen}">Connectedness</strong><br />
+            <span ng-show="connDetailOpen">
+                <span ng-repeat="badge in badges | filter: {badge_category:'CONN' } | filter:query as results3"></span>
+                You have {{results3.length}}  <span ng-if="results3.length !== 1">achievements</span>
+                <span ng-if="results3.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results3.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results3.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results3.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results3.length == 5"> (Gold). Well done!</span>
+            </span>
+        </p>
+        <div ng-show="connDetailOpen" class="box two-col" ng-repeat="nextbadge in nextbadges | filter: {next_badge_category: 'CONN'}">
+            <a data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                <div class="inner-box">
+                    <span class="badge {{nextbadge.next_badge_category}} faded"><i class="fa fa-star-o"></i></span>
+                    <span class="badge-caption">{{nextbadge.coursename}}<br /> ({{nextbadge.next_badge_name}})</span>
+                </div>
+            </a>
+        </div>
+        <p ng-show="(nextbadges).length">
+            <strong class="strapline muted" ng-click="gensDetailToggle()" ng-class="{closed:!gensDetailOpen,open:gensDetailOpen}">Generosity of Spirit</strong><br />
+            <span ng-show="gensDetailOpen">
+                <span ng-repeat="badge in badges | filter: {badge_category:'GENS' } | filter:query as results4"></span>
+                You have {{results4.length}}  <span ng-if="results4.length !== 1">achievements</span>
+                <span ng-if="results4.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results4.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results4.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results4.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results4.length == 5"> (Gold). Well done!</span>
+            </span>
+        </p>
+        <div ng-show="gensDetailOpen" class="box two-col" ng-repeat="nextbadge in nextbadges | filter: {next_badge_category:'GENS'}">
+            <a data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                <div class="inner-box">
+                    <span class="badge {{nextbadge.next_badge_category}} faded"><i class="fa fa-star-o"></i></span>
+                    <span class="badge-caption">{{nextbadge.coursename}}<br /> ({{nextbadge.next_badge_name}})</span>
+                </div>
+            </a>
+        </div>
+
+        <div ng-show="loadingFinished"><span ng-show="!(nextbadges).length">You have signed up for all the suggested activities.</span></div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </div>
+</div>     

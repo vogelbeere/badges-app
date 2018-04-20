@@ -1,0 +1,58 @@
+﻿<div class="pane"  ng-click="doHideMenuPanel()">
+    <h2>Timeline <span class="notification" ng-if="newCount > 0">{{newCount}}</span></h2>
+    <div id="error-msg" class="not-displayed">
+    </div>
+    <div class="page-wrap">
+        <div class=" animated slideInUp">
+            <div class="events-feed">
+                <div id="loading" ng-show="loading">
+                    <i class="fa fa-spinner fa-pulse fa-2x"></i>
+                </div>
+                <div ng-show="loadingFinished">&nbsp; 
+                     <div ng-show="!(events).length" class=" animated slideInUp">
+                         <p>There are no events to display yet.</p> 
+                         <p>
+                            Please check back here when you have signed up for an <a href="#/activities">activity</a>,
+                            or received an <a href="#/achievements">achievement</a> or an <a href="#/awards">award</a>.
+                            These will be listed here in date order, so you can track your progress.
+                         </p> 
+                         <p>Check out some <a href="#/suggestedbadges">suggested activities</a> to sign up for.</p>
+                      </div>
+                </div>
+                <div ng-repeat="event in events | orderBy : 'event.event_date':true" class="event-wrapper">
+                    <span ng-if="event.event_type == 'sign-up'" class="large badge faded {{event.event_category}}" id="{{event.event_id}}">
+                        <i class="fa fa-check"></i>
+                    </span>
+                    <span ng-if="event.event_type == 'badge-issued'" class="large badge {{event.event_category}}" id="{{event.event_id}}">
+                        <i class="fa fa-trophy"></i>
+                    </span>
+                    <span ng-if="event.event_type == 'award-issued' && event.event_name != 'count1'" class="large badge {{event.event_category}}" id="{{event.event_id}}">
+                        <i class="fa fa-certificate {{event.event_name}}"></i>
+                    </span>
+                    <span class="event-item" ng-if="event.event_name != 'count1'">
+                        {{event.event_preamble}}
+                        <strong ng-if="event.event_name =='count2'">
+                            Bronze
+                        </strong>
+                        <strong ng-if="event.event_name =='count3'">
+                            Silver
+                        </strong>
+                        <strong ng-if="event.event_name =='count5'">
+                            Gold
+                        </strong>
+                        <strong ng-if="event.event_type !== 'award-issued'">
+                            {{event.event_name}}
+                        </strong>
+                        <span ng-if="event.event_type == 'award-issued'">
+                            in <em ng-if="event.event_category == 'CONF'">Confidence </em>
+                            <em ng-if="event.event_category == 'CONN'">Connectedness </em>
+                            <em ng-if="event.event_category == 'ENTC'">Enterprising creativity </em>
+                            <em ng-if="event.event_category == 'GENS'">Generosity of spirit </em>
+                        </span>
+                        on <time class="epoch" datetime="{{event.event_date * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}">{{event.event_date * 1000 | date:'d MMM yyyy'}} at {{event.event_date * 1000 | date:'HH:mm'}}</time>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>      

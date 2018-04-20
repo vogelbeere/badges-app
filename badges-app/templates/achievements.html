@@ -1,0 +1,39 @@
+﻿<div class="pane"  ng-click="doHideMenuPanel()">
+    <h2>Your Achievements</h2>
+
+    <div class="page-wrap scroll">
+        <!-- ng-controller="myBadgesCtrl" -->
+        <div class="inner-box two-col  animated slideInUp">
+            <div id="loading" ng-hide="loadingFinished">
+                <i class="fa fa-spinner fa-pulse fa-2x"></i>
+            </div>
+            <div class="event-wrapper" ng-repeat="badge in badges | orderBy : 'badge.issue_date':true" id="{{badge.badge_id}}">
+                <a data-toggle="modal" ng-click="openMyBadge(badge)">
+                    <span class="large badge {{badge.badge_category}}"><i class="fa fa-star"></i></span>
+                    <div class="badge-data">
+                        <span class="badge-caption">{{badge.badge_name}}</span>
+                        <br />
+                        <time class="epoch" datetime="{{badge.issue_date * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}">{{badge.issue_date * 1000 | date:'dd MMM, yyyy'}}</time>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="inner-box  animated slideInUp" ng-show="loadingFinished">
+            <div ng-show="!(badges).length">
+                <p>You haven't been awarded any achievements yet.</p>
+                <p>
+                    Please check back here when you have completed an activity and been awarded an achievement.
+                    Your achievements will be listed here in date order, so you can track your progress.
+                </p>
+                <p>Have a look at the <a href="#/activities">activities</a> you have signed up for.</p>
+            </div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <div class="bottom">
+        <button class="show-div" ng-click="showExplanation()" data-rel="popup" id="show-d16" data-transition="pop">What is an achievement?</button>
+    </div>
+</div>

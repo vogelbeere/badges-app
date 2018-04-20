@@ -1,0 +1,62 @@
+﻿
+    <!--MODAL WINDOW for badge issued details -->
+    <!--<script type="text/ng-template" id="myBadgeModalContent.html">-->
+        <div class="modal-dialog animated fadeInUp">
+            <!--ACHIEVEMENTS THE STUDENT HAS COMPLETED-->
+            <div class="modal-content" ng-if="thing.badge_icon == 'achievement'">
+                <div class="modal-header">
+                    <button type="button" class="cancel right button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><i class="fa fa-close"></i></button>
+                    <span class="large badge {{thing.badge_category}}"><i class="fa fa-star"></i></span>
+                    <span class="badge-caption">{{thing.badge_name}}</span>
+                </div>
+                <div class="modal-body">
+                    <p>{{thing.description | htmlToPlainText}}</p>
+                    <p>
+                        You have completed this achievement.
+                    </p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="button ok btn-default" data-dismiss="modal" ng-click="cancel()">OK</button>
+                </div>
+            </div>
+            <!--ACTIVITIES THE STUDENT HAS SIGNED UP FOR-->
+            <div class="modal-content" ng-if="thing.badge_icon == 'activity'">
+                <div class="modal-header">
+                    <button type="button" class="cancel right button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><i class="fa fa-close"></i></button>
+                    <span class="large badge muted {{thing.badge_category}}"><i class="fa fa-check"></i></span>
+                    <span class="badge-caption">{{thing.activity_name}}</span>
+                </div>
+                <div class="modal-body">
+                    <p>{{thing.description | htmlToPlainText}}</p>
+                    <p>
+                        <strong>You have signed up for this activity.</strong>
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" ng-model="activity.activity_id" id="coursecode" value="{{thing.courseid}}" name="coursecode" />
+                    <button id="{{thing.courseid}}" ng-click="unenrol()" class="right button"> Remove <i class="fa fa-trash"></i> </button>
+                </div>
+            </div> 
+                       <!--SUGGESTED ACTIVITIES -->
+            <div class="modal-content" ng-if="thing.badge_icon == 'suggested'">
+                <div class="modal-header">
+                    <button type="button" class="cancel right button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><i class="fa fa-close"></i></button>
+                    <span class="large badge faded {{thing.badge_category}}"><i class="fa fa-star-o"></i></span>
+                    <span class="badge-caption">{{thing.badge_name}}</span>
+                </div>
+                <div class="modal-body">
+                    <p>{{thing.description | htmlToPlainText}}</p>
+                    <p>
+                        You have not signed up for this activity.
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="button cancel btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+                    <button type="button" class="button ok btn-primary" ng-click="confirm()">Sign me up</button>
+                </div>
+            </div>
+        </div>
+    <!--</script>-->

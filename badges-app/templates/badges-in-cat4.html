@@ -1,0 +1,53 @@
+﻿<div class="pane"  ng-click="doHideMenuPanel()">
+    <br />{{nextbadge.coursename}}<br />
+    <button class="show-div right large help" id="show-d12" ng-click="showGenS()" data-rel="popup" data-transition="pop"><i class="fa fa-question-circle"></i></button>
+    <a href="#/allbadges" class="show-div right large help"><i class="fa fa-search"></i></a>
+    <h2 class="catname">Generosity of spirit</h2>
+    <div class="badges-in-cat inner-box" id="catbox-c4">
+
+
+        <p>Select an activity to view more details.</p>
+        <div id="loading" ng-show="loading">
+            <i class="fa fa-spinner fa-pulse fa-2x"></i>
+        </div>
+        <ul data-role="listview" class="ui-listview">
+            <!--  ng-controller="myBadgesCtrl" -->
+            <li class="ui-li-static ui-body-inherit" ng-if="badges.length > 0"><strong>Your achievements</strong></li>
+            <li class="ui-li-static ui-body-inherit" ng-repeat="badge in badges | orderBy : 'badge.issue_date':true | filter: {badge_category:'GENS'}">
+                <a id="{{badge.badge_id}}" data-toggle="modal" ng-click="openMyBadge(badge)">
+                    <span class="badge {{badge.badge_category}}"><i class="fa fa-star"></i></span> <strong>{{badge.badge_name}}</strong>
+                    <time class="epoch" datetime="{{badge.issue_date * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}">{{badge.issue_date * 1000 | date:'dd MMM, yyyy'}}</time>
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" class="ui-listview">
+            <!--  ng-controller="activitiesCtrl" -->
+            <li class="ui-li-static ui-body-inherit" ng-if="activities.length > 0"><strong>Your activities</strong></li>
+            <li class="ui-li-static ui-body-inherit" ng-repeat="activity in activities | orderBy : 'activity.activity_name' | filter: {activity_category:'GENS'}">
+                <a id="{{activity.activity_id}}" data-toggle="modal" ng-click="openActivity(activity)">
+                    <span class="badge muted {{activity.activity_category}}"><i class="fa fa-check"></i></span> {{activity.activity_name}}
+                </a>
+            </li>
+        </ul>
+        <ul data-role="listview" class="ui-listview">
+            <!--  ng-controller="nextBadgesCtrl" -->
+            <li class="ui-li-static ui-body-inherit" ng-if="nextbadges.length > 0"><strong>Suggested activities</strong></li>
+            <li class="ui-li-static ui-body-inherit" ng-repeat="nextbadge in nextbadges | orderBy : 'nextbadge.next_badge_name' | filter: {next_badge_category:'GENS'}">
+                <div class="inner-box activities event-wrapper">
+                    <a id="{{nextbadge.next_badge_id}}" data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                        <span class="badge faded {{nextbadge.next_badge_category}}"><i class="fa fa-star-o"></i></span>
+                        <div class="activitycaption" style="display: inline-block; width: 86%;">{{nextbadge.coursename}}<br /> ({{nextbadge.next_badge_name}})</div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bottom">
+        &middot; <a href="#/badges-in-cat1" class="cat-drilldown" id="find-c1">Confidence</a>
+        &middot; <a href="#/badges-in-cat2" class="cat-drilldown" id="find-c2">Enterprising creativity</a>
+        &middot; <a href="#/badges-in-cat3" class="cat-drilldown" id="find-c3">Connectedness</a>
+        &middot; <a href="#/badges-in-cat4" class="cat-drilldown" id="find-c4">Generosity of spirit</a>
+        &middot; <a href="#/categories" class="show-pane" id="show-p9">All</a>
+    </div>
+</div>

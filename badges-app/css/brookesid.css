@@ -1,0 +1,1090 @@
+﻿
+
+body {
+    overflow: hidden;
+}
+
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 20px 0 0 6px;
+    font-family: 'HelveticaNeueW01-55Roma','Helvetica Neue', Helvetica, Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.header img {
+    vertical-align: bottom;
+    float: left;
+    margin: 12px 6px 6px 6px;
+}
+
+span.strapline {
+    font-style: italic;
+    display: inline-block;
+    font-family: 'HelveticaNeueW01-55Roma','Helvetica Neue', Calibri, Helvetica, Tahoma, Geneva, Verdana, sans-serif !important;
+    padding: 6px 0;
+}
+
+
+.pane {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 81vh;
+    margin-bottom: 75px;
+    padding: 0 1em;
+}
+
+.menu {
+    background-color: #fff;
+    color: #424a52;
+    padding: 0;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    font-size: 95%;
+    height: 100%;
+}
+
+.menu-item {
+    border-bottom: 1px solid #ccc;
+    padding: 6px;
+    font-size: 110%;
+}
+
+.menu a, .menu a:visited {
+    color: #38c;
+    font-weight: bold;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    border-bottom: 1px solid #ccc;
+}
+#btn_logout, #logout {
+    cursor: pointer;
+}
+
+.header h1 {
+    padding: 12px 0 0 6px;
+    font-size: 150%;
+}
+
+.back {
+    margin: 35px 0 0 1em;
+
+}
+
+/* FROM http://www.cssarrowplease.com/ */
+ 
+.arrow-box {
+	position: absolute;
+	background: #003896;
+    color: #fff;
+    z-index: 250;
+    top: 85px;
+    width: 80%;
+    right: 20px;
+    padding: 1em 0.75em 0 0.75em;
+    border-radius: 6px;
+    box-shadow: rgba(0,0,0, 0.4) 3px 3px 3px;
+    display: block;
+}
+
+.arrow-box::after {
+	bottom: 100%;
+	left: 90%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent #003896 #003896 transparent;
+	border-width: 14px;
+	margin-left: -14px;
+    z-index: 240;
+    box-shadow: rgba(0,0,0, 0.4) 4px 0 4px -2px;
+}
+
+.pane .strapline {
+    display: inline-block;
+    width: 98%;
+    margin-bottom: 0.25em;
+    cursor: pointer;
+    background-color: #424a52;
+    color: #fff;
+    padding: 3px 6px;
+    font-size: 1.2em;
+    margin: 12px 0 0;
+}
+
+strong.strapline.open::after {
+    content: "▼";
+    float:right;
+    color: #fff;
+}
+
+strong.strapline.closed::after {
+    content: "►";
+    float:right;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+#password {
+    margin-left: 12px;
+}
+
+a.help:hover {
+    border-bottom: 1px solid transparent !important;
+}
+
+.strapline a, .sort a, .sync a, .categories a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.strapline a:hover, .sort a:hover, .sync a:hover, .what a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.strapline p, .sort p, .sync p {
+    margin-left: 1em;
+}
+
+div.awards a {
+    color: #424a52;
+}
+
+/* loader / spinner */
+.loader, .spinner {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* awards */
+
+.medals {
+    height: 12em;
+    width: 80%;
+    margin: 1em auto;
+}
+
+.medals.count1 {
+    background-color: transparent;
+}
+
+.medals.count2 {
+    background: no-repeat url(../images/bronze.png);
+    background-size: cover;
+}
+
+.medals.count3, .medals.count4 {
+    background: no-repeat url(../images/silver.png);
+    background-size: cover;
+}
+
+.medals.count5 {
+    background: no-repeat url(../images/gold.png);
+    background-size: cover;
+}
+
+
+/* Make a 12 pointed star
+    https://css-tricks.com/examples/ShapesOfCSS/
+    Alan Johnson
+*/
+
+.burst-12 {
+    position: relative;
+    text-align: center;
+    margin: 1.25em auto 0 auto;
+    z-index: 1;
+}
+.burst-12:before, .burst-12:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.burst-12:before {
+    -webkit-transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+}
+.burst-12:after {
+    -webkit-transform: rotate(60deg);
+       -moz-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+         -o-transform: rotate(60deg);
+}
+
+.bg-12.display2, 
+.bg-12.display3, 
+.bg-12.display4, 
+.bg-12.display5 {
+    position: relative;
+    text-align: center;
+    margin: 1.25em auto 0 auto;
+    background-color: #424a52;
+}
+.bg-12.display2:before, 
+.bg-12.display2:after,
+.bg-12.display3:before, 
+.bg-12.display3:after,
+.bg-12.display4:before, 
+.bg-12.display4:after,
+.bg-12.display5:before, 
+.bg-12.display5:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #424a52;
+}
+.bg-12:before {
+    -webkit-transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+}
+.bg-12:after {
+    -webkit-transform: rotate(60deg);
+       -moz-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+         -o-transform: rotate(60deg);
+}
+
+hr.wonc {
+    border: 0;
+    height: 1px;
+    background: #fff;
+}
+
+hr.bonw {
+    border: 0;
+    height: 1px;
+    background: #424a52;
+}
+/* menu animation */
+
+.ui-panel-open {
+    transition: 1s; /* 1 second transition effect to slide in the sidenav */
+}
+
+/* ui-content */
+.ui-content {
+    margin: 75px 0 0 0;
+}
+
+.ui-listview a {
+    text-decoration:none;
+}
+
+.ui-listview li {
+    list-style-type: none;
+    font-size: 105%;
+}
+
+.ui-listview li strong {
+    margin-left: 0.5em;
+}
+
+.pane .ui-listview li {
+    margin-left: -3em;
+}
+
+/*.ui-li-static {
+    padding: .42em 1em !important;
+    font-size: 0.9em;
+} */
+
+.explanation {
+    padding: 12px;
+    position: absolute;
+    z-index: 201;
+    top: 80px;
+    width: 85%;
+}
+
+.hidden {
+    display: none;
+}
+
+.hiddenDiv {
+    padding: 6px;
+    position: absolute;
+    text-align: left;
+    background-color: #fff;
+    color: #000;
+    box-shadow: rgba(0,0,0, 0.4) 3px 3px;
+    z-index: 201;
+    top: 80px;
+    width: 90%;
+    transition: display 0.5s ease-in-out;
+}
+
+.overlay {
+	position: fixed;
+	text-align: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 200;
+	opacity: 0.7;
+}
+
+footer, .bottom {
+    flex-wrap: wrap;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+    width: 100%;
+    padding: 6px;
+    font-size: 95%;
+}
+
+footer h4, .footer p {
+    display: inline-block;
+}
+
+footer a, .header a, .bottom a {
+    text-decoration: none;
+}
+
+.header a:hover {
+    border-bottom: 0;
+}
+
+footer a:hover, .bottom a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #9eab05;
+}
+
+.clear {
+    clear: both;
+}
+
+.right {
+    float: right;
+}
+
+.justify-right {
+    text-align: right;
+}
+
+.left {
+    float: left;
+}
+
+div.left {
+    text-align: left;
+}
+
+.centre, .center {
+    text-align: center;
+}
+
+.img-fingerprint {
+    margin: 2em 3em 0 3em;
+}
+
+.show-pane, .show-div, .show-lookup {
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+}
+
+
+#menu .toggle-menu {
+    display: block;
+    font-size: 125%;
+}
+
+#app-title .toggle-menu {
+    font-size: 190%;
+    position: absolute;
+    top: 26px;
+    right: 16px;
+}
+.fixed-right {
+    right: 0;
+}
+
+.pane h2 {
+    margin: 3px 0 9px 0;
+}
+
+.divider {
+    padding: 12px 0 0 0;
+    margin: 0;
+}
+
+/* news feed */
+
+.feed-icon {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.feed-info {
+    display: inline-block;
+}
+
+/* forms */
+
+label, input, select {
+    display: inline-block;
+    margin: 0.5em;
+    vertical-align: middle;
+}
+
+.unity {
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.help-block {
+    display: block;
+}
+
+/* buttons */
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.button, input.ui-btn {
+   border-radius: 3px;
+    padding: 6px;
+    margin: 4px;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+
+.icon {
+    padding: 0 6px;
+}
+
+/*categories */
+
+.categories {
+    padding: 6px 0;
+}
+
+.categories p {
+    margin: 0.25em;
+}
+
+.nobullet {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+.category-box {
+    display: inline-table;
+    width: 42%;
+    margin: 4px 1px 2px 1px;
+    padding: 6px;
+    font-size: 0.85em;
+}
+
+
+/* responsive grid */
+
+.page-wrap {
+    flex-wrap: wrap;
+}
+
+.box,
+.menu-box
+{
+	display: inline-block;
+	padding: 0;
+	vertical-align: top;
+}
+
+.box h3 {
+    padding: 3px;
+}
+
+.one-col {
+    width: 48%;
+}
+
+.two-col {
+    width: 97%;
+    margin: 0 auto;
+}
+
+.inner-box {
+    padding: 6px;
+}
+
+.category-inline {
+    display: inline-block;
+    margin: 3px 1px;
+    border-radius: 6px;
+    padding: 0 3px;
+}
+
+.category-inline a {
+    text-decoration: none;
+}
+
+/* badge icons */
+
+.badge {
+    border-radius: 50%;
+    padding: 4px 6px;
+    display: inline-block;
+    margin: 3px;
+}
+
+.large {
+    font-size: 180%;
+}
+
+.very-large {
+    font-size: 300%;
+}
+
+.faded {
+    opacity: 0.5;
+}
+.muted {
+    opacity: 0.7;
+}
+
+.notification {
+    border-radius: 25%;
+    padding: 0 3px;
+    position: relative;
+    top: -6px;
+    right: -6px;
+    z-index: 1;
+}
+
+.impact-count {
+    text-align: right;
+    display: inline-block;
+    margin: 0 0.5em;
+    width: 2em;
+}
+
+.badge-caption {
+    padding-bottom: 6px;
+    font-size: 90%;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#pane-p8 .badge-caption {
+    width: 60%;
+}
+
+.event-item {
+    font-size: 90%;
+    display: inline-block;
+    width: 80%;
+}
+
+/* news feed */ 
+
+.feed-icon img {
+    border-radius: 50%;
+    transform: scale(0.75,0.75);
+    vertical-align: middle;
+}
+
+.event-wrapper {
+    border-bottom: 1px solid rgb(102,102,102);
+    padding: 0.5em;
+}
+
+/* privacy */
+
+.response {
+    width: 75%;
+}
+
+/* profile */
+
+.editable {
+    width: 10em;
+    padding: 0.75em;
+    background-color: #fff;
+    display: inline-block;
+    white-space: pre-wrap;
+    vertical-align: top;
+}
+
+.opaque {
+    opacity: 0.7;
+    padding: 1em;
+}
+
+textarea.input {
+    width: 15em;
+    clear: left;
+    height: 12em;
+}
+
+ul.delineated li, ul.bottomline li {
+    list-style: none;
+    padding: .55em 1em;
+    list-style-position: inside;
+}
+
+div.delineated p {
+    border-top: 1px solid #424a52;
+    padding-top: 6px;
+}
+
+/* inbox */
+
+
+.toolbar {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.toolbar button {
+    width: 2em;
+}
+
+.explanation textarea {
+    width: 100%;
+    height: 10em;
+    margin-left: 5px;
+}
+
+#compose-message label {
+    font-size: 90%;
+    width: 50px;
+}
+
+.subject {
+    cursor: pointer;
+}
+
+.messages {
+    list-style-type: none;
+    margin-left: -3em;
+}
+
+.mailbox {
+    padding: 0.5em;
+    border-bottom: 1px solid #424a52;
+}
+
+.receivedmsgbody {
+    padding-right: 8px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.newemail {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.reademail {
+    background-color: #dedede;
+    color: #000;
+    font-weight: normal;
+}
+/* reputation */
+
+.rep-list p {
+    margin: 0.25em 0;
+    padding: 0.125em;
+}
+
+.rep-list date, .rep-list span {
+    display: inline-block;
+}
+
+.rep-score {
+    text-align: right;
+    width: 3em;
+}
+
+.rep-event {
+    width: 12em;
+}
+
+.rep-list date {
+    width: 4em;
+}
+
+.rep-up:before {
+    content: "+";
+}
+
+.rep-down:before {
+    content: "-";
+}
+
+/* badges */
+
+.activities .large.badge.faded, 
+.hiddenDiv .badge,
+.modal-content .badge {
+    vertical-align: middle;
+}
+
+.badge-data .badge {
+    vertical-align: top;
+}
+
+.badge-data {
+    display: inline-block;
+    font-size: 90%;
+}
+
+.badge-drilldown {
+    cursor: pointer;
+    font-size: 95%;
+}
+
+.modal-dialog {
+    z-index: 250;
+    position: absolute;
+    background-color: #fff;
+    width: 90%;
+    margin: -4% 5%;
+}
+
+.modal {
+    display: block;
+}
+
+.modal-content {
+   padding: 0 6px;
+}
+
+.modal-header {
+    padding: 6px 6px 0 6px;
+}
+
+.modal-header.branded {
+    padding: 0 6px 10px 45px;
+    background-image: url(../images/fingerprint-light-small.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.modal-body {
+    padding: 0 6px;
+}
+
+.modal-footer {
+    padding: 0 6px 9px 6px;
+    text-align: right;
+}
+
+a[data-toggle] {
+    cursor: pointer;
+}
+
+.hide-overflow {
+    overflow: hidden;
+}
+
+/* branding */
+
+.fingerprint-light {
+    background-image: url(../images/fingerprint-light.png);
+    background-size:cover;
+    min-height: 100%;
+}
+
+.fingerprint-very-light {
+    background-image: url(../images/fingerprint-very-light.png);
+    background-size:cover;
+    min-height: 100%;
+}
+
+
+
+/**
+ *   MEDIA QUERIES 
+ **/
+
+@media (max-width: 320px) {
+
+    /* iPhone hack */
+    #menu {
+        top: 20px;
+    }
+
+    .header {
+    top: 20px;
+    padding: 0 0 0 6px;
+}
+
+   .burst-12:before, .burst-12, .burst-12:after
+     {
+        width: 30px;
+        height: 30px;
+    }
+    
+    div.delineated p {
+        font-size: 90%;
+    }
+   
+    .bg-12:before, .bg-12, .bg-12:after {
+        width: 31px;
+        height: 31px;
+    }
+
+    body, input, select, textarea, button, .ui-btn {
+        font-size: 0.9em;
+        line-height: 1.1;
+    }
+
+    label, input[type=text], input[type=password], select {
+        display: inline; 
+        margin: 0.5em;
+        width: 57%;
+    }
+
+    .img-fingerprint {
+        height: 210px;
+        width: 140px;
+    }
+
+    .category-box {
+        height: 122px;
+    }
+
+    div.awards {
+        padding: 0.5em;
+    }
+
+    .badge-drilldown, .badge {
+        font-size: 90%;
+    }
+
+    a[data-toggle], .modal-body {
+        font-size: 90%;
+    }
+
+}
+
+@media (min-width:321px) and  (max-width: 767px) {
+   .burst-12:before, .burst-12, .burst-12:after
+     {
+        width: 40px;
+        height: 40px;
+    }
+
+
+     div.awards {
+        padding: 0.5em;
+    }   
+   
+    .bg-12:before, .bg-12, .bg-12:after {
+        width: 41px;
+        height: 41px;
+    }
+
+    .img-fingerprint {
+        height: 300px;
+        width: 200px;
+    }
+    .category-box {
+        height: 134px;
+    }
+
+    .modal-body {
+        font-size: 90%;
+    }
+
+    #privacy label {
+        width: 85%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .category-box {
+    min-height: 240px;
+    max-height: 330px;
+    }
+
+    .very-large {
+        font-size: 400%;
+    }
+    
+    .large {
+        font-size: 250%;
+    }
+
+    .very-large img {
+        height: 120px;
+        margin-top: 22px;
+    }
+
+    .badge-drilldown, .category-box a {
+        font-size: 200%;
+    }
+
+    .header h1, .bottom {
+        font-size: 200%;
+    }
+    
+    #app-title .toggle-menu {
+        font-size: 200%;
+        position: absolute;
+        top: 18px;
+        right: 12px;
+    }
+
+    .menu {
+        width: 75%;
+    }
+
+     .menu-item a, 
+    .modal-header .badge-caption,
+    .menu button.toggle-menu {
+        font-size: 125%;
+    }
+
+    #content h2 {
+        margin-top: 1.5em;
+        font-size: 200%;
+    }
+
+    .form-actions button {
+        margin-right: 50%;
+    }
+
+    #privacy button {
+        margin-right: 25%;
+        margin-top: 0.5em;
+    }
+
+    .badge-caption {
+    padding: 6px 0;
+     font-size: 100%;
+    }
+
+    .badge-data {
+        font-size: 130%;
+    }
+
+    .badges-in-cat p, .page-wrap p, .mailbox, #privacy label {
+        font-size: 150%;
+    }
+
+    .burst-12:before, .burst-12, .burst-12:after
+     {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .bg-12:before, .bg-12, .bg-12:after {
+        width: 81px;
+        height: 81px;
+    }
+
+    .modal-dialog {
+    width: 80%;
+    margin: 10px 10%;
+    }
+
+    .badge {
+        font-size: 150%;
+        margin-top: 12px;
+    }
+
+    .large.badge {
+        font-size: 250%;
+    }
+
+    div.awards {
+        font-size: 150%;
+        margin: 2px 0;
+        padding: 0.5em;
+    }
+
+    div.awards i {
+        font-size: 150%;
+        margin: 0.25em;
+    }
+    
+    .box h3, h2.strapline {
+        font-size: 150%;
+        letter-spacing: 1px;
+    }
+
+    .modal-content p, .modal-content h4 {
+        font-size: 150%;
+    }
+
+    .activitycaption {
+        display:inline-block;
+        margin: 0 0 0 2em;
+
+    }
+
+    .modal-content button {
+        font-size: 180%;
+    }
+    .event-item {
+        font-size: 125%;
+    }
+
+    .bg-12.display2, .bg-12.display3, .bg-12.display4, .bg-12.display5 {
+        margin: 2.25em auto 0 auto;
+    }
+}
+
+/****
+ * fix issue of flaky modals 
+ * http://stackoverflow.com/questions/10437151/twitter-bootstrap-modal-on-mobile-devices
+ ****/
+
+@media (max-width: 767px) {
+  #content .modal.fade.in {
+    top: 5%;
+  }
+}
+

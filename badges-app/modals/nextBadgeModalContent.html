@@ -1,0 +1,28 @@
+﻿
+    <!--MODAL WINDOW for next badge details -->
+    <!--<script type="text/ng-template" id="nextBadgeModalContent.html">-->
+        <div class="modal-dialog animated fadeInUp">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="cancel right button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><i class="fa fa-close"></i></button>
+                    <span class="large badge faded {{nextbadge.next_badge_category}}"><i class="fa fa-star-o"></i></span>
+                    <span class="badge-caption">{{nextbadge.coursename}} activity leading to an achievement of <em>{{nextbadge.next_badge_name}}</em></span>
+                </div>
+                <div class="modal-body">
+                    <p class="description" ng-hide="hideDesc">{{nextbadge.coursedescription | htmlToPlainText}}</p>
+                    <p ng-if="nextbadge.next_badge_type == 'UNI'">This activity is open to everyone.</p>
+                    <p ng-if="nextbadge.next_badge_type == 'TDE'">This activity is for students in the  Faculty of Technology, Design and Environment .</p>
+                    <p ng-if="nextbadge.next_badge_type == 'BUS'">This activity is for students in Oxford Brookes Business School.</p>
+                    <p ng-if="nextbadge.next_badge_type == 'HLS'">This activity is for students in the  Faculty of Health and Life Sciences.</p>
+                    <p ng-if="nextbadge.next_badge_type == 'HSS'">This activity is for students in the Faculty of Humanities and Social Sciences.</p>
+                    <input type="hidden" ng-model="nextbadge.courseid" id="coursecode" value="{{nextbadge.courseid}}" name="coursecode" />
+                    <p class="default" ng-hide="hideMe"> {{PostDataResponse}}</p>
+                    <p class="error" ng-hide="hideMe"> {{ResponseDetails}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button cancel btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+                    <button type="button" class="button ok btn-primary" ng-click="confirm()">Sign me up</button>
+                </div>
+            </div>
+        </div>
+    <!--</script>-->

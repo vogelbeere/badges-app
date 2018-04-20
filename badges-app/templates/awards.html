@@ -1,0 +1,130 @@
+﻿<div class="pane"  ng-click="doHideMenuPanel()">
+    <h2>Your Awards</h2>
+    <div class="categories centre clear">
+        <!-- ng-controller="awardsCtrl" -->
+        <div class="two-col">
+            <div class="hiddenDiv animated fadeInUp" ng-hide="toggle1">
+                <h3>Confidence</h3>
+                <p ng-repeat="award in awards | filter: {badge_category:'CONF'} | filter:query as results1">
+                    <span class="badge {{award.badge_category}}"><i class="fa fa-star"></i></span>
+                    <span class="badge-caption">{{award.badge_name}}</span>
+                    <br />{{award.badge_description}}
+                </p>
+                <hr class="bonw" />
+                Total: {{results1.length}}  <span ng-if="results1.length !== 1">achievements</span>
+                <span ng-if="results1.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results1.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results1.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results1.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results1.length == 5"> (Gold)</span>
+                <button class="right button ok" ng-click="toggleFilter1()">OK</button>
+            </div>
+            <div class="category-box category1 animated flipInX">
+                <a href="#/badges-in-cat1" class="badge-drilldown" id="see-c1">Confidence</a>
+                <!--2 badges = bronze; 3 badges = silver; 5 badges = gold-->
+                <hr class="wonc" />
+                <a ng-click="toggleFilter1()" data-toggle="modal">
+                    You have {{results1.length}}  <span ng-if="results1.length !== 1">achievements</span>
+                    <span ng-if="results1.length == 1">achievement</span> 
+                </a>
+                <div class="bg-12 display{{results1.length}}">
+                    <div class="burst-12 count{{results1.length}}"></div>
+                </div>
+                <!--<div class="medals count{{results1.length}}"></div>-->
+            </div>
+            <div class="hiddenDiv animated fadeInUp" ng-hide="toggle2">
+                <h3>Enterprising Creativity</h3>
+                <p ng-repeat="award in awards | filter: {badge_category:'ENTC'} | filter:query as results2">
+                    <span class="badge {{award.badge_category}}"><i class="fa fa-star"></i></span>
+                    <span class="badge-caption">{{award.badge_name}}</span>
+                    <br />{{award.badge_description}}
+                </p>
+                <hr class="bonw" />
+                Total: {{results2.length}}  <span ng-if="results2.length !== 1">achievements</span>
+                <span ng-if="results2.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results2.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results2.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results2.length == 4"> (Silver). You need one more to get a Gold award.</span>
+                <span ng-if="results2.length == 5"> (Gold)</span>
+                <button class="right button ok" ng-click="toggleFilter2()">OK</button>
+            </div>
+            <div class="category-box category2 animated flipInX">
+                <a href="#/badges-in-cat2" class="badge-drilldown" id="see-c2">Enterprising creativity</a>
+                <hr class="wonc" />
+                <a ng-click="toggleFilter2()" data-toggle="modal">
+                    You have {{results2.length}} <span ng-if="results2.length !== 1">achievements</span>
+                    <span ng-if="results2.length == 1">achievement</span> 
+                </a>
+                <div class="bg-12 display{{results2.length}}">
+                    <div class="burst-12 count{{results2.length}}"></div>
+                </div>
+                <!--<div class="medals count{{results2.length}}"></div>-->
+            </div>
+        </div>
+        <div class="two-col">
+            <div class="hiddenDiv animated fadeInUp" ng-hide="toggle3">
+                <h3>Connectedness</h3>
+                <p ng-repeat="award in awards | filter: {badge_category:'CONN'} | filter:query as results3">
+                    <span class="badge {{award.badge_category}}"><i class="fa fa-star"></i></span>
+                    <span class="badge-caption">{{award.badge_name}}</span>
+                    <br />{{award.badge_description}}
+                </p>
+                <hr class="bonw" />
+                Total:  {{results3.length}}  <span ng-if="results3.length !== 1">achievements</span>
+                <span ng-if="results3.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results3.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results3.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results3.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results3.length == 5"> (Gold)</span>
+                <button class="right button ok" ng-click="toggleFilter3()">OK</button>
+            </div>
+            <div class="category-box category3 animated flipInX">
+                <a href="#/badges-in-cat3" class="badge-drilldown" id="see-c3">Connectedness</a>
+                <hr class="wonc" />
+                <a ng-click="toggleFilter3()" data-toggle="modal">
+                    You have {{results3.length}} <span ng-if="results3.length !== 1">achievements</span>
+                    <span ng-if="results3.length == 1">achievement</span> 
+                </a>
+                <div class="bg-12 display{{results3.length}}">
+                    <div class="burst-12 count{{results3.length}}"></div>
+                </div>
+                <!--<div class="medals count{{results3.length}}"></div>-->
+            </div>
+            <div class="hiddenDiv animated fadeInUp" ng-hide="toggle4">
+                <h3>Generosity of Spirit</h3>
+                <p ng-repeat="award in awards | filter: {badge_category:'GENS'} | filter:query as results4">
+                    <span class="badge {{award.badge_category}}"><i class="fa fa-star"></i></span>
+                    <span class="badge-caption">{{award.badge_name}}</span>
+                    <br />{{award.badge_description}}
+                </p>
+                <hr class="bonw" />
+                Total: {{results4.length}}  <span ng-if="results4.length !== 1">achievements</span>
+                <span ng-if="results4.length == 1">achievement. You need one more to get a Bronze award.</span>
+                <span ng-if="results4.length == 2"> (Bronze).  You need one more to get a Silver award.</span>
+                <span ng-if="results4.length == 3"> (Silver). You need two more to get a Gold award.</span>
+                <span ng-if="results4.length == 4"> (Silver).  You need one more to get a Gold award.</span>
+                <span ng-if="results4.length == 5"> (Gold)</span>
+                <button class="right button ok" ng-click="toggleFilter4()">OK</button>
+            </div>
+            <div class="category-box category4 animated flipInX">
+                <a href="#/badges-in-cat4" class="badge-drilldown" id="see-c4">Generosity of spirit</a>
+                <hr class="wonc" />
+                <a ng-click="toggleFilter4()" data-toggle="modal">
+                    You have {{results4.length}} <span ng-if="results4.length !== 1">achievements</span>
+                    <span ng-if="results4.length == 1">achievement</span> 
+                </a>
+                <div class="bg-12 display{{results4.length}}">
+                    <div class="burst-12 count{{results4.length}}"></div>
+                </div>
+                <!--<div class="medals count{{results4.length}}"></div>-->
+            </div>
+        </div>
+        <div ng-if="(results1.length == 0) && (results2.length == 0) && (results3.length == 0) && (results4.length == 0)" class="left">
+            <p>You haven't received any awards yet.</p>
+            <p>Please check back here when you have completed two activities and been awarded achievements for them.</p>
+        </div>
+    </div>
+    <div class="bottom">
+        <button class="show-div" ng-click="showExplanation()" data-rel="popup" id="show-d13" data-transition="pop">What is an award?</button>
+    </div>
+</div>

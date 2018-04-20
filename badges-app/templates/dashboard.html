@@ -1,0 +1,111 @@
+﻿<div class="pane"  ng-click="doHideMenuPanel()">
+    <h2>Dashboard</h2>
+    <div id="error-msg" class="not-displayed">
+    </div>
+
+    <div class="box two-col animated slideInUp">
+        <strong class="strapline muted" ng-click="achieveToggle()" ng-class="{closed:!achieveOpen,open:achieveOpen}">
+            Your Achievements
+            <span class="notification right" ng-show="newBadgeCount > 0">{{newBadgeCount}}</span>
+        </strong>
+        <div ng-show="achieveOpen">
+            <div id="loading1" ng-hide="myBadgeLoadingFinished">
+                <i class="fa fa-spinner fa-pulse fa-2x"></i>
+            </div>
+            <div class="inner-box">
+                <!--  ng-controller="myBadgesCtrl" -->
+                <span ng-repeat="badge in badges | orderBy : 'badge.issue_date':true | filter:query as mybadges">
+                    <a id="{{badge.badge_id}}" class="badge {{badge.badge_category}}" data-toggle="modal" ng-click="openMyBadge(badge)">
+                        <i class="fa fa-star"></i>
+                    </a>
+                </span>
+                <span ng-show="myBadgeLoadingFinished">
+                    <span ng-show="!(badges).length">You don't have any achievements yet. But you will, once you have completed an activity.</span>
+                </span>
+                <p><a href="#/achievements">View a list of your achievements</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box two-col animated slideInUp" id="your-activities">
+        <strong class="strapline muted" ng-click="activityToggle()" ng-class="{closed:!activityOpen,open:activityOpen}">Your Activities</strong>
+        <div ng-show="activityOpen">
+            <div id="loading2" ng-hide="activityLoadingFinished">
+                <i class="fa fa-spinner fa-pulse fa-2x"></i>
+            </div>
+            <div class="inner-box">
+                <!--  ng-controller="activitiesCtrl" -->
+                <span ng-repeat="activity in activities | orderBy : 'activity.activity_name' | filter:query as activities">
+                    <a id="{{activity.activity_id}}" class="badge faded {{activity.activity_category}}" data-toggle="modal" ng-click="openActivity(activity)">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </span>
+
+                <span ng-show="activityLoadingFinished">
+                    <span ng-show="!(activities).length">You have not signed up for any activities yet. <a href="#/suggestedbadges">View suggested activities and sign up</a>.</span>
+                </span>
+                <p><a href="#/activities">View a list of activities you have signed up for</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box two-col animated slideInUp">
+        <strong class="strapline muted" ng-click="suggestedToggle()" ng-class="{closed:!suggestedOpen,open:suggestedOpen}">Suggested Activities</strong>
+        <div ng-show="suggestedOpen">
+            <div id="loading3" ng-hide="nextBadgeLoadingFinished">
+                <i class="fa fa-spinner fa-pulse fa-2x"></i>
+            </div>
+            <div class="inner-box">
+                <!--  ng-controller="nextBadgesCtrl" -->
+                <span ng-repeat="nextbadge in nextbadges | orderBy : 'nextbadge.next_badge_name' | filter:query as nextbadges">
+                    <a id="{{nextbadge.next_badge_id}}" class="badge faded {{nextbadge.next_badge_category}}" data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                        <i class="fa fa-star-o"></i>
+                    </a>
+                </span>
+                <span ng-show="nextBadgeLoadingFinished">
+                    <span ng-show="!(nextbadges).length">You have signed up for all the suggested activities.</span>
+                </span>
+                <p><a href="#/suggestedbadges">View a list of suggested activities</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="box two-col animated slideInUp">
+        <!--  ng-controller="myBadgesCtrl" -->
+        <strong class="strapline muted" ng-click="awardsToggle()" ng-class="{closed:!awardsOpen,open:awardsOpen}">Your Awards</strong>
+        <div ng-show="awardsOpen">
+            <div class="awards category1">
+                <a href="#/badges-in-cat1">Confidence</a>
+                <span ng-repeat="badge in badges | filter: {badge_category:'CONF'} | filter:query as results1">
+                </span>
+
+                <!--2 badges = bronze; 3 badges = silver; 5 badges = gold-->
+                <i class="fa fa-certificate count{{results1.length}}"></i>
+            </div>
+            <div class="awards category2">
+                <a href="#/badges-in-cat2">Enterprising creativity</a>
+                <span ng-repeat="badge in badges | filter: {badge_category:'ENTC'} | filter:query as results2">
+                </span>
+
+                <!--2 badges = bronze; 3 badges = silver; 5 badges = gold-->
+                <i class="fa fa-certificate count{{results2.length}}"></i>
+            </div>
+            <div class="awards category3">
+                <a href="#/badges-in-cat3">Connectedness</a>
+                <span ng-repeat="badge in badges | filter: {badge_category:'CONN'} | filter:query as results3">
+                </span>
+
+                <!--2 badges = bronze; 3 badges = silver; 5 badges = gold-->
+                <i class="fa fa-certificate count{{results3.length}}"></i>
+            </div>
+            <div class="awards category4">
+                <a href="#/badges-in-cat4">Generosity of spirit</a>
+                <span ng-repeat="badge in badges | filter: {badge_category:'GENS'} | filter:query as results4">
+                </span>
+
+                <!--2 badges = bronze; 3 badges = silver; 5 badges = gold-->
+                <i class="fa fa-certificate count{{results4.length}}"></i>
+            </div>
+            <p><a href="#/awards">View your awards</a></p>
+        </div>
+    </div>
+</div>

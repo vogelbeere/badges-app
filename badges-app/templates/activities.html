@@ -1,0 +1,36 @@
+﻿
+    <div class="pane"  ng-click="doHideMenuPanel()">
+    <h2>Your Activities</h2>
+       
+
+    <div class="page-wrap">
+        <div id="loading" ng-hide="loadingFinished">
+            <i class="fa fa-spinner fa-pulse fa-2x"></i>
+        </div>
+        <ul data-role="listview" class="ui-listview animated slideInUp">
+            <!--  ng-controller="activitiesCtrl" -->
+            <li ng-repeat="activity in activities | orderBy : 'activity_name'">
+                <div class="inner-box activities event-wrapper">
+                    <a id="{{activity.activity_id}}" class="large badge faded {{activity.activity_category}}" data-toggle="modal" ng-click="openActivity(activity)">
+                        <i class="fa fa-check"></i>
+                    </a>
+                    <a class="activity-caption" data-toggle="modal" ng-click="openActivity(activity)">{{activity.activity_name}}</a>&nbsp;
+                </div>
+            </li>
+            <li ng-show="loadingFinished" class="inner-box animated slideInUp">&nbsp; 
+                <div ng-show="!(activities).length">
+                    <p>You haven't signed up for any activities yet.</p>
+                    <p>
+                        Please check back here when you have signed up for an activity.
+                        Activities you have signed up for will be listed here in date order, so you can track your participation.
+                    </p>
+                    <p>Check out some <a href="#/suggestedbadges">suggested activities</a> to sign up for.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <button class="show-div" ng-click="showExplanation()" data-rel="popup" id="show-d14" data-transition="pop">What is an activity?</button>
+    </div>
+    
+</div>

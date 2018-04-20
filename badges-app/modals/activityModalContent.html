@@ -1,0 +1,27 @@
+﻿
+    <!--MODAL WINDOW for activity details -->
+    <!--<script type="text/ng-template" id="activityModalContent.html">-->
+        <div class="modal-dialog animated fadeInUp">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="cancel right button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><i class="fa fa-close"></i></button>
+                    <span class="large badge faded {{activity.activity_category}}"><i class="fa fa-check"></i></span>
+                    <span class="badge-caption">{{activity.activity_name}}</span>
+                </div>
+                <div class="modal-body">
+                    <p class="description">{{activity.activity_description | htmlToPlainText}}</p>
+                    <p class="description" ng-hide="hideDesc">
+                        You signed up for this activity on<br />
+                        <time class="epoch" datetime="{{activity.signed_up * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}">{{activity.signed_up * 1000 | date:'dd MMM, yyyy'}}</time>.
+                    </p>
+                    <p class="default" ng-hide="hideMe">{{PostDataResponse}}</p>
+                    <p class="default" ng-hide="hideMe">{{ResponseDetails}}</p>
+                    <p class="default" ng-hide="hideMe">{{actionStatus}}</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" ng-model="activity.activity_id" id="coursecode" value="{{activity.activity_id}}" name="coursecode" />
+                    <button id="{{activity.activity_id}}" ng-click="unenrol()" class="right button"> Remove <i class="fa fa-trash"></i> </button>
+                </div>
+            </div>
+        </div>
+    <!--</script>-->

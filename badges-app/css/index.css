@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "HelveticaNeueW01-55Roma";
+    src: url("/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot");
+    src: url("/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),
+         url("/fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),
+         url("/fonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg") format("svg");
+}
+
+/* standard Cordova stuff */
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+	background-color:#ffffff;
+    /*background-image:linear-gradient(top, #adafaf 0%, #f3f3f3 51%);
+    background-image:-webkit-linear-gradient(top,  #adafaf 0%, #f3f3f3 51%);
+    background-image:-ms-linear-gradient(top, #adafaf 0%, #f3f3f3 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #adafaf),
+        color-stop(0.51, #f3f3f3)
+    );*/
+    background-attachment:fixed;
+    font-family: 'HelveticaNeueW01-55Roma','Helvetica Neue', Helvetica, Tahoma, Geneva, Verdana, sans-serif !important;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.app {
+    background: url(../images/cordova.png) no-repeat center top; 
+    position: absolute;             
+    left: 50%;
+    top: 50%;
+    height: 50px;                  
+    width: 225px;                   
+    text-align: center;
+    padding: 180px 0px 0px 0px;     
+    margin: -115px 0px 0px -112px;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;
+        margin:-90px 0px 0px -198px;
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}

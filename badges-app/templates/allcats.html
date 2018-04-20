@@ -1,0 +1,130 @@
+﻿<div class="pane scroll"  ng-click="doHideMenuPanel()">
+
+    <button class="show-div right large help" data-rel="popup" ng-click="showCatExplanation()" id="show-d15" data-transition="pop">
+        <i class="fa fa-question-circle"></i>
+    </button>
+    <a href="#/allbadges" class="show-div right large help"><i class="fa fa-search"></i></a>
+    <h2>Categories</h2>
+   
+    <p>Select an activity to view details.</p>
+    <div class="animated slideInUp">
+        <strong class="strapline badge-drilldown muted" ng-click="confToggle()" ng-class="{closed:!confOpen,open:confOpen}">Confidence</strong>
+        <div class="inner-box" ng-show="confOpen">
+            <span>
+                <!--  ng-controller="myBadgesCtrl" -->
+                <span ng-repeat="badge in badges | orderBy : 'badge.issue_date':true | filter: {badge_category:'CONF'}">
+                    <a id="{{badge.badge_id}}" class="badge {{badge.badge_category}}" data-toggle="modal" ng-click="openMyBadge(badge)">
+                        <i class="fa fa-star"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="activitiesCtrl" -->
+                <span ng-repeat="activity in activities | orderBy : 'activity.activity_name' | filter: {activity_category:'CONF'}">
+                    <a id="{{activity.activity_id}}" class="badge faded {{activity.activity_category}}" data-toggle="modal" ng-click="openActivity(activity)">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="nextBadgesCtrl" -->
+                <span ng-repeat="nextbadge in nextbadges | orderBy : 'nextbadge.next_badge_name' | filter: {next_badge_category:'CONF'}">
+                    <a id="{{nextbadge.next_badge_id}}" class="badge faded {{nextbadge.next_badge_category}}" data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                        <i class="fa fa-star-o"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+        <strong class="strapline badge-drilldown muted" ng-click="entcToggle()" ng-class="{closed:!entcOpen,open:entcOpen}">
+            Enterprising creativity
+        </strong>
+        <div class="inner-box" ng-show="entcOpen">
+            <span>
+                <!--  ng-controller="myBadgesCtrl" -->
+                <span ng-repeat="badge in badges | orderBy : 'badge.issue_date':true | filter: {badge_category:'ENTC'}">
+                    <a id="{{badge.badge_id}}" class="badge {{badge.badge_category}}" data-toggle="modal" ng-click="openMyBadge(badge)">
+                        <i class="fa fa-star"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="activitiesCtrl" -->
+                <span ng-repeat="activity in activities | orderBy : 'activity.activity_name' | filter: {activity_category:'ENTC'}">
+                    <a id="{{activity.activity_id}}" class="badge faded {{activity.activity_category}}" data-toggle="modal" ng-click="openActivity(activity)">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="nextBadgesCtrl" -->
+                <span ng-repeat="nextbadge in nextbadges | orderBy : 'nextbadge.next_badge_name' | filter: {next_badge_category:'ENTC'}">
+                    <a id="{{nextbadge.next_badge_id}}" class="badge faded {{nextbadge.next_badge_category}}" data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                        <i class="fa fa-star-o"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+        <strong class="strapline badge-drilldown muted" ng-click="connToggle()" ng-class="{closed:!connOpen,open:connOpen}">Connectedness</strong>
+        <div class="inner-box"ng-show="connOpen">
+            <span>
+                <!--   ng-controller="myBadgesCtrl"-->
+                <span ng-repeat="badge in badges | orderBy : 'badge.issue_date' | filter: {badge_category:'CONN'}">
+                    <a id="{{badge.badge_id}}" class="badge {{badge.badge_category}}" data-toggle="modal" ng-click="openMyBadge(badge)">
+                        <i class="fa fa-star"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="activitiesCtrl" -->
+                <span ng-repeat="activity in activities | orderBy : 'activity.activity_name' | filter: {activity_category:'CONN'}">
+                    <a id="{{activity.activity_id}}" class="badge faded {{activity.activity_category}}" data-toggle="modal" ng-click="openActivity(activity)">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="nextBadgesCtrl" -->
+                <span ng-repeat="nextbadge in nextbadges | orderBy : 'nextbadge.next_badge_name' | filter: {next_badge_category:'CONN'}">
+                    <a id="{{nextbadge.next_badge_id}}" class="badge faded {{nextbadge.next_badge_category}}" data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                        <i class="fa fa-star-o"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+        <strong class="strapline badge-drilldown muted" ng-click="gensToggle()" ng-class="{closed:!gensOpen,open:gensOpen}">Generosity of spirit</strong>
+        <div class="inner-box" ng-show="gensOpen">
+            <span>
+                <!--  ng-controller="myBadgesCtrl" -->
+                <span ng-repeat="badge in badges | orderBy : 'badge.issue_date':true | filter: {badge_category:'GENS'}">
+                    <a id="{{badge.badge_id}}" class="badge {{badge.badge_category}}" data-toggle="modal" ng-click="openMyBadge(badge)">
+                        <i class="fa fa-star"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="activitiesCtrl" -->
+                <span ng-repeat="activity in activities | orderBy : 'activity.activity_name' | filter: {activity_category:'GENS'}">
+                    <a id="{{activity.activity_id}}" class="badge faded {{activity.activity_category}}" data-toggle="modal" ng-click="openActivity(activity)">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </span>
+            </span>
+            <span>
+                <!--  ng-controller="nextBadgesCtrl" -->
+                <span ng-repeat="nextbadge in nextbadges | orderBy : 'nextbadge.next_badge_name' | filter: {next_badge_category:'GENS'}">
+                    <a id="{{nextbadge.next_badge_id}}" class="badge faded {{nextbadge.next_badge_category}}" data-toggle="modal" ng-click="openNextBadge(nextbadge)">
+                        <i class="fa fa-star-o"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="bottom">
+        &middot; <a href="#/badges-in-cat1" class="cat-drilldown" id="find-c1">Confidence</a>
+        &middot; <a href="#/badges-in-cat2" class="cat-drilldown" id="find-c2">Enterprising creativity</a>
+        &middot; <a href="#/badges-in-cat3" class="cat-drilldown" id="find-c3">Connectedness</a>
+        &middot; <a href="#/badges-in-cat4" class="cat-drilldown" id="find-c4">Generosity of spirit</a>
+        &middot; <a href="#/categories" class="show-pane" id="show-p9">All</a>
+    </div>
+</div>
+

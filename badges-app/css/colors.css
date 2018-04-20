@@ -1,0 +1,371 @@
+﻿
+
+/* *** BROOKES COLOURS  ***
+
+Primary colour palette
+LIME: #9eab05   CHARCOAL: #424a52   PINK: #d10373
+
+Secondary colour palette
+    PURPLE: #6a2150 
+    RED: #c70540
+    YELLOW: #e3ba12
+    GOLD: #f49103
+    AQUA: #0085a1
+    BLUE: #003896
+    GREEN: #006338
+
+Neutral colour palette
+    Mid grey: #adafaf
+    Light grey: #f3f3f3
+*/
+
+.header {
+    background-color: #f3f3f3;
+    color: #000;
+	box-shadow: 0 3px 5px 0px #adafaf;
+}
+
+.header .highlight {
+    color: #d10373;
+}
+
+#menu {
+    box-shadow: -8px 0px 5px -5px #aaa;
+}
+
+#app-title .toggle-menu {
+    background-color: transparent;
+    color: #424a52;
+}
+
+#menu .toggle-menu {
+    background-color: transparent;
+    color: #38c;
+}
+
+.error, .help-block, .alert-danger {
+    color: #c70540;
+}
+
+.warning {
+    color: #e3ba12;
+    background-color: #424a52;
+}
+
+.success {
+    color: #4B946A;
+}
+
+.loader, .spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #d10373; /* Brookes pink */
+}
+
+span.strapline {
+    
+    color: #424a52;
+}
+
+h3.strapline {
+    background-color: #424a52;
+    color: #fff;
+}
+
+.help {
+    color: #0085a1;
+    background-color: transparent;
+}
+
+a.help:hover {
+    border-bottom: 1px solid transparent !important;
+    color: #d10373;
+}
+
+.sort, .subheading {
+    background-color: #adafaf;
+    color: #000;
+}
+
+.sync {
+    background-color: #f3f3f3;
+    color: #424a52;
+}
+
+.sort a:hover, .sync a:hover, .what a:hover {
+    border-bottom: 1px solid #d10373;
+}
+
+.strapline a {
+    color: #fff;
+}
+
+.categories a {
+    color: #000;
+}
+
+.sort a, .sync a {
+    color: #000;
+}
+
+.sort a:hover, .sync a:hover {
+    color: #424a52;
+}
+
+
+.explanation {
+    background-color: #f3f3f3;
+    color: #000;
+}
+
+.overlay {
+	opacity: 0.7;
+	background: #424a52;
+}
+
+footer, .bottom {
+    background-color: #424a52;
+    color: #fff;
+	box-shadow:         0 -3px 5px 0px #adafaf;
+}
+footer a, .bottom a {
+    color: #ffffff;
+}
+
+.header a {
+    color: #000;
+}
+
+footer a:hover, .bottom a:hover {
+    color: #ffffff;
+    border-bottom: 1px solid #9eab05;
+}
+
+/* awards */
+
+i.count1, i.count0, .bg-12.display0,  .bg-12.display1 {
+    color: transparent;
+    background-color: transparent;
+}
+
+i.count2 {
+    color: #8C7853; /* bronze */
+    background-color: transparent;
+}
+
+.awards i.count2::after {
+    content: " Bronze";
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Geneva, Verdana, Arial, sans-serif;
+}
+
+i.count3, i.count4 {
+    color: #adafaf; /* silver */
+    background-color: transparent;
+}
+.awards i.count3::after, i.count4::after {
+    content: " Silver";
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Geneva, Verdana, Arial, sans-serif;
+}
+
+i.count5 {
+    color: #D4A017; /* gold */
+    background-color: transparent;
+}
+
+.awards i.count5::after {
+    content: " Gold";
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Geneva, Verdana, Arial, sans-serif;
+}
+
+.burst-12, .burst-12:before, .burst-12:after {
+    color: #000;
+}
+
+.burst-12.count2 {
+    background-color: #8C7853; /* bronze*/
+    /*background: url(../images/bronze.png) no-repeat;
+    background-size: contain;*/
+}
+
+.burst-12.count2:before, .burst-12.count2:after {
+    background-color: #8C7853;
+}
+
+.bronze, .count2 {
+    background-color: #8C7853;
+}
+
+.burst-12.count3, .burst-12.count4 {
+    background-color: #E6E8FA; /* silver */
+    /*background: url(../images/silver.png) no-repeat;
+    background-size: contain;*/
+}
+
+.burst-12.count3:before, .burst-12.count3:after,
+.burst-12.count4:before, .burst-12.count4:after {
+    background-color: #E6E8FA;
+}
+
+.silver, .count3, .count4 {
+    background-color: #E6E8FA;
+}
+
+.burst-12.count5 {
+    background-color: #D4A017; /* GOLD - previously #CFB53B*/
+    /*background: url(../images/gold.png) no-repeat;
+    background-size: contain;*/
+}
+
+.burst-12.count5:before, .burst-12.count5:after {
+    background-color: #D4A017;
+}
+
+.gold, count5 {
+    background-color: #D4A017;
+}
+
+/* forms */
+
+.unity {
+    background-color: #ffffff;
+    color: #424a52;
+}
+
+/* buttons */
+
+.button {
+    box-shadow: #adafaf 3px 2px 3px;
+}
+
+.back {
+    color: #424a52;
+}
+
+.cta {                          /* call to action */
+    background-color: #d10373;
+    color: #fff;
+}
+
+.secondary {
+    background-color: #0085a1;
+    color: #FFFFFF;
+}
+
+.ok {
+    background-color: #4B946A;
+    color: #FFFFFF;
+}
+
+.cancel {
+    background-color: #c70540;
+    color: #FFFFFF;
+}
+
+.trans {
+    background-color: transparent;
+}
+
+.white {
+    background-color: #fff;
+}
+/*categories */
+
+.category-box, .awards {
+     color: #000;
+     background-color: #fff;
+}
+
+.category1, .CONF {
+     border: 2px solid #e3ba12; /* Confidence */
+}
+
+.category2, .ENTC {
+     border: 2px solid #d10373; /* Enterprising creativity */
+}
+
+.category3, .CONN {
+     border: 2px solid #9eab05; /* Connectedness */
+}
+
+.category4, .GENS {
+     border: 2px solid #003896; /* Generosity of spirit */
+}
+
+
+.badge.category1, .CONF {
+     background-color: #e3ba12; /* Confidence */
+}
+
+.badge.category2, .ENTC {
+     background-color: #d10373; /* Enterprising creativity */
+}
+
+.badge.category3, .CONN {
+     background-color: #9eab05; /* Connectedness */
+}
+
+.badge.category4, .GENS {
+     background-color: #003896; /* Generosity of spirit */
+}
+
+
+.box h3 {
+    background-color: #424a52;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.category-inline {
+    background-color: #f3f3f3;
+    color: #000;
+}
+
+li.awards a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* badge icons */
+
+.badge {
+    color: #fff;
+}
+
+.badge-placeholder {
+    background-color: #d10373;
+}
+
+.next-placeholder {
+    background-color: #4B946A;
+}
+
+.notification {
+    background-color: #c70540;
+    color: #fff;
+}
+
+.opaque {
+    background-color: #424a52;
+    opacity: 0.7;
+    color: #fff;
+}
+
+ul.delineated li {
+    border-top: 1px solid #424a52;
+}
+
+ul.bottomline li {
+    border-bottom: 1px solid #424a52;
+}
+
+/* inbox */
+
+.toolbar {
+    background-color: #adafaf;
+}
+
+/* reputation */
+
+.rep-list p:nth-child(odd) {
+    background-color: #f3f3f3;
+}
+

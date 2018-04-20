@@ -1,0 +1,24 @@
+﻿
+  <div class="pane"  ng-click="doHideMenuPanel()">
+    <h2>Settings</h2>
+    <div id="privacy" class="animated slideInUp">
+        <h3 class="strapline muted">Moodle Privacy Settings</h3>
+        <!--  ng-controller="privacyCtrl" -->
+        <input name="badgeprivacysetting" type="checkbox" id="badgeprivacysetting" ng-change="checked()" ng-model="privacy.badgeprivacysetting" ng-model-options="{debounce: 300}" />
+
+        <label for="badgeprivacysetting">Automatically show achievements (badges) that I earn on my Moodle profile page</label>
+        <button type="button" class="ok button right" ng-click="SendData()">Save</button>
+        <p class="default"> {{PostDataResponse}}</p>
+        <p>&nbsp;</p>
+        <!--<h3 class="strapline muted">Show help</h3>
+        <p>
+            <button ng-click="showPopup()" class="ok button">{{buttonLabel}}</button><br />
+            
+        </p>-->
+        <h3 class="strapline muted">Refresh</h3>
+        <p>
+            <button ng-click="reload()" class="ok button">Reload application data</button>
+        </p>
+        <p ng-show="refreshed">Application data reloaded.</p>
+    </div>
+</div>

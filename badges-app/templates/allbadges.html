@@ -1,0 +1,63 @@
+﻿<div class="pane"  ng-click="doHideMenuPanel()">
+
+    <h2>Search activities</h2>
+    <p ng-hide="loading">Select an activity to view more details.</p>
+    <div id="loading" ng-show="loading">
+        <i class="fa fa-spinner fa-pulse fa-2x"></i>
+    </div>
+    <table ng-hide="loading">
+        <tr>
+            <td align="right">Search </td>
+            <td><input ng-model="query[queryBy]" /></td>
+        </tr>
+    </table>
+    <div class="animated slideInUp">
+       
+    
+            <ul class="ui-listview">
+                <!--  ng-controller="allBadgesCtrl" -->
+                <li class="ui-li-static ui-body-inherit" ng-repeat="thing in things | orderBy : 'thing.badge_name' | filter:query as filtered ">
+                        <div ng-if="thing.badge_icon == 'achievement'" class="inner-box activities event-wrapper">
+                            <a id="{{thing.badge_id}}" class="badge {{thing.badge_category}}" data-toggle="modal" ng-click="openMyThing(thing)">
+                                <i class="fa fa-star"></i> 
+                            </a>
+                            <div class="activitycaption" style="display: inline-block; width: 84%;">
+                                <a id="{{thing.badge_id}}" data-toggle="modal" ng-click="openMyThing(thing)">
+                                    {{thing.badge_name}}
+                                </a>
+                                <span class="hidden"> {{thing.description}}</span>
+                            </div>
+                        </div>
+                        <div ng-if="thing.badge_icon == 'suggested'" class="inner-box activities event-wrapper">
+                            <a id="{{thing.badge_id}}" class="badge faded {{thing.badge_category}}" data-toggle="modal" ng-click="openMyThing(thing)">
+                                <i class="fa fa-star-o"></i> 
+                            </a>
+                            <div class="activitycaption" style="display: inline-block; width: 84%;">
+                                <a id="{{thing.badge_id}}" data-toggle="modal" ng-click="openMyThing(thing)">
+                                    {{thing.activity_name}} <br/>  ({{thing.badge_name}})
+                                </a>
+                                <span class="hidden"> {{thing.description}}</span>
+                                </div>
+                            </div>
+                        <div ng-if="thing.badge_icon == 'activity'" class="inner-box activities event-wrapper">
+                            <a id="{{thing.badge_id}}" class="badge faded {{thing.badge_category}}" data-toggle="modal" ng-click="openMyThing(thing)">
+                                <i class="fa fa-check"></i> {{thing.badge_name}}
+                            </a>
+                            <div class="activitycaption" style="display: inline; width: 84%;">
+                                <a id="{{thing.badge_id}}" data-toggle="modal" ng-click="openMyThing(thing)">
+                                    {{thing.activity_name}}
+                                </a>
+                                <span class="hidden"> {{thing.description}}</span>
+                            </div>
+                    </div>
+                </li>
+                <li ng-if="filtered.length == 0">No results found</li>
+            </ul>
+            
+           
+     
+       
+    </div>
+    
+</div>
+

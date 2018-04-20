@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <!--<base href="/"/>-->
+    <meta name="author" content="Yvonne Aburrow" />
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://*.brookes.ac.uk" />
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./css/My Badges.css" />
+    <link rel="stylesheet" type="text/css" href="./css/colors.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/animate.css" />
+    <!--header -->
+
+    <script src="./scripts/lib/jquery-3.1.0.min.js"></script>
+    <!-- load the json2 library (required for jstorage use) -->
+    <script src="./scripts/lib/json2.js"></script>
+    <!-- load the jstorage library *-->
+    <script src="./scripts/lib/jstorage.js"></script>
+    <!-- load the angular library -->
+    <script src="./scripts/lib/angular.min.js"></script>
+    <script src="./scripts/lib/angular-route.min.js"></script>
+    <script src="./scripts/lib/angular-cookies.min.js"></script>
+    <script src="./scripts/lib/angular-resource.min.js"></script>
+    <script src="./scripts/lib/ui-bootstrap.min.js"></script>
+    <script src="./scripts/lib/ui-bootstrap-tpls.min.js"></script>
+    <title>My Badges</title>
+</head>
+<body onscroll="toggleBackButton()">
+    <div data-role="page" id="welcome-page">
+        <div id="controller-wrapper" ng-controller="loginCtrl">
+            <div class="arrow-box" ng-hide="hidePopup">
+                <button class="cancel button right" ng-click="doHidePopup()"><i class="fa fa-times"></i></button>
+                    Use the hamburger icon to show or hide the menu options.
+            </div>
+            <div class="overlay" ng-hide="hideOverlay">&nbsp;</div>
+            <div data-role="panel" id="menu" data-display="overlay" ng-hide="hideMenuPanel" class="menu animated slideInRight">
+                <div class="ui-panel-inner">
+                    <ul data-role="listview" class="ui-listview">
+                        <li class="menu-item">
+                            <button data-rel="close" class="toggle-menu right" ng-click="doHideMenuPanel()"><i class="fa fa-close"></i></button>
+                            <a href="#/home" ng-click="doHideMenuPanel()"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/eventsfeed" ng-click="doHideMenuPanel()">Timeline</a><br />
+                            All your activities
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/dashboard" ng-click="doHideMenuPanel()">Dashboard</a><br />
+                            All your achievements
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/suggestedbadges" ng-click="doHideMenuPanel()">Suggested Activities</a><br />
+                            What to go for next
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/messages" ng-click="doHideMenuPanel()">Messages</a><br />
+                            Your notifications
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/achievements" ng-click="doHideMenuPanel()">Your Achievements</a><br />
+                            Achievements you have earnt
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/awards" ng-click="doHideMenuPanel()">Your Awards</a><br />
+                            Awards you have earnt
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/activities" ng-click="doHideMenuPanel()">Your Activities</a><br />
+                            What you've signed up for
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/categories" ng-click="doHideMenuPanel()">Categories</a><br />
+                            Activity categories
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/privacy" ng-click="doHideMenuPanel()">Settings</a><br />
+                            Your preferences
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/about" ng-click="doHideMenuPanel()">About the app</a><br />
+                            
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/login" id="logout" ng-click="logout()">Log out</a><br />
+                            Sign out of the app
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /panel -->
+            <div data-role="header" class="header">
+                <!--  -->
+                <div id="app-title">
+                    <a href="#/home" rel="external" ng-click="doHideMenuPanel()"><img src="images/brain-in-a-jar.png" height="55" alt="My Badges"/></a>
+                    <h1><a href="#/home" rel="external" ng-click="doHideMenuPanel()">My<span class="highlight">Badges</span></a></h1>
+                    <button class="toggle-menu icon right" id="menu_btn" ng-hide="hideMenuButton" ng-click="showMenuPanel()"><i class="fa fa-navicon"></i></button>
+                    <span class="strapline"><a href="#/home" rel="external" ng-click="doHideMenuPanel()">My individual development</a></span>
+                </div>
+            </div>
+        </div>
+        <div role="main" id="main" class="ui-content">
+            <site-header back="back"></site-header>
+            <div id="system-message" class=""></div>
+            <div id="success-message" class=""></div>
+
+            <div data-role="content" id="content">
+                <!--content from ng-view gets injected here-->
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+
+    <script src="./scripts/platformOverrides.js"></script>
+    <script src="./scripts/index.js"></script>
+
+    <script src="./scripts/mainApp.js"></script>
+   
+</body>
+</html>
